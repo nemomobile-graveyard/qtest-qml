@@ -2,16 +2,16 @@ Name: qtest-qml
 Summary: Unit test framework for QML
 #
 # There was no version tags in upstream so
-# the version is just for Nemo packaging appended
-# with upstream git sha
+# the version is just for Nemo packaging
+# it will get appended with upstream git sha
 #
-Version: 0.0.2+really+0.0.1~git7703547
+Version: 0
 Release: 1
 Group: System/Libraries
 License: LGPL v.2.1
 URL: http://qt.gitorious.org/qt-labs/qtest-qml
 Sources:
-    - qtest-qml-7703547.tar.bz2
+    - "%{name}-%{version}.tar.bz2"
 Patches:
     - 0001-Don-t-destroy-qApp-if-it-s-created-outside-of-quick_.patch
 Description: Qt Labs Unit test framework for QML
@@ -25,6 +25,7 @@ PkgConfigBR:
     - QtDeclarative
     - QtOpenGL
 
+SetupOptions: -q -n %{name}-%{version}/%{name}
 Files:
     - "%{_libdir}/libQtQuickTest.so.*"
     - "%{_libdir}/qt4/imports/QtQuickTest/*"

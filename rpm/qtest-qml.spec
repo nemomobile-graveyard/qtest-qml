@@ -9,12 +9,12 @@ Name:       qtest-qml
 # << macros
 
 Summary:    Unit test framework for QML
-Version:    0.0.2+really+0.0.1~git7703547
+Version:    0
 Release:    1
 Group:      System/Libraries
 License:    LGPL v.2.1
 URL:        http://qt.gitorious.org/qt-labs/qtest-qml
-Source0:    qtest-qml-7703547.tar.bz2
+Source0:    %{name}-%{version}.tar.bz2
 Source100:  qtest-qml.yaml
 Patch0:     0001-Don-t-destroy-qApp-if-it-s-created-outside-of-quick_.patch
 Requires:   qt4-default
@@ -37,7 +37,7 @@ Development files for integrating test apps with QML Unit test runner
 
 
 %prep
-%setup -q -n %{name}
+%setup -q -n %{name}-%{version}/%{name}
 
 # 0001-Don-t-destroy-qApp-if-it-s-created-outside-of-quick_.patch
 %patch0 -p1
