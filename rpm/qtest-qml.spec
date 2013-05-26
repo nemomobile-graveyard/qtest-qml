@@ -17,6 +17,7 @@ URL:        http://qt.gitorious.org/qt-labs/qtest-qml
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  qtest-qml.yaml
 Patch0:     0001-Don-t-destroy-qApp-if-it-s-created-outside-of-quick_.patch
+Patch1:     0002-load-translations.patch
 Requires:   qt4-default
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
@@ -41,6 +42,8 @@ Development files for integrating test apps with QML Unit test runner
 
 # 0001-Don-t-destroy-qApp-if-it-s-created-outside-of-quick_.patch
 %patch0 -p1
+# 0002-load-translations.patch
+%patch1 -p1
 # >> setup
 # << setup
 
