@@ -1,0 +1,32 @@
+* Wed Apr 24 2013 Dmitry Rozhkov <dmitry.rozhkov@jollamobile.com> - 0.0.2+really+0.0.1~git7703547
+- Remove /usr/bin/qmltestrunner symlink.
+- Add dependency on qt4-default.
+
+* Thu Apr 4 2013 Robin Burchell <robin+mer@viroteck.net> - 0.0.2+really+0.0.1~git7703547
+- Correct installation to match Qt coinstall changes.
+
+* Thu Apr 4 2013 Dmitry Rozhkov <dmitry.rozhkov@jollamobile.com> - 0.0.2+really+0.0.1~git7703547
+- Update to latest upstream
+- Apply patch from Oleg Romashin 0001-Don-t-destroy-qApp-if-it-s-created-outside-of-quick_.patch
+
+* Tue Mar 26 2013 Dmitry Rozhkov <dmitry.rozhkov@jollamobile.com> - 0.0.2+really+0.0.0~git27697b38
+- Apply patch from Oleg Romashin 0001-Don-t-create-event-loop-in-quick_test_main-if-it-exi.patch
+
+* Fri Mar 22 2013 Dmitry Rozhkov <dmitry.rozhkov@jollamobile.com> - 0.0.2+really+0.0.0~git27697b38
+- Move development files to the devel subpackage.
+
+* Thu Feb 7 2013 Robin Burchell <robin+mer@viroteck.net> - 0.0.2+really+0.0.0~git27697b38
+- Fixes NEMO#627: Updated to new upstream SHA.
+- Moved all files from spec to yaml.
+- Version number is really 0.0.0 (unreleased) upstream, reflect this using a
+  fake version number specifically for our packaging, and a git sha.
+  This isn't an ideal solution, but it's better than continuing to pretend that
+  upstream has real version numbers at this point.
+
+* Mon Dec 10 2012 Marko Saukko <marko.saukko@jollamobile.com> - 0.0.1~gitd39a1865
+- Updated packaging.
+
+* Wed Sep 5 2012 Vesa-Matti Hartikainen <vesa-matti.hartikainen@jollamobile.com> - 0.0.1~gitd39a1865
+- Fixes NEMO#379: Package qtest-qml unit testing framework to Nemo
+- Initial version of qtest-qml package for Nemo Mobile.
+

@@ -1,0 +1,27 @@
+From 9351019683bfbc9e0463fdf9f9ebe50869de5193 Mon Sep 17 00:00:00 2001
+From: Dmitry Rozhkov <dmitry.rozhkov@jollamobile.com>
+Date: Thu, 4 Apr 2013 11:25:19 +0300
+Subject: [PATCH] Don't destroy qApp if it's created outside of
+ quick_test_main()
+
+---
+ src/quicktestlib/quicktest.cpp |    3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/quicktestlib/quicktest.cpp b/src/quicktestlib/quicktest.cpp
+index ef38b9f..4ceebd8 100644
+--- a/src/quicktestlib/quicktest.cpp
++++ b/src/quicktestlib/quicktest.cpp
+@@ -112,7 +112,8 @@ static inline QString stripQuotes(const QString &s)
+ int quick_test_main(int argc, char **argv, const char *name, quick_test_viewport_create createViewport, const char *sourceDir)
+ {
+     // qApp might be already created in main application which is using quicktestlib
+-    QScopedPointer<QApplication> app(qApp ? qApp : new QApplication(argc, argv));
++    // in case it is don't destroy it when leaving the scope.
++    QScopedPointer<QApplication> app(qApp ? NULL : new QApplication(argc, argv));
+ 
+     // Look for QML-specific command-line options.
+     //      -import dir         Specify an import directory.
+-- 
+1.7.9.5
+
