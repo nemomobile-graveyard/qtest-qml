@@ -14,6 +14,7 @@ Sources:
     - "%{name}-%{version}.tar.bz2"
 Patches:
     - 0001-Don-t-destroy-qApp-if-it-s-created-outside-of-quick_.patch
+    - 0002-load-translations.patch
 Description: Qt Labs Unit test framework for QML
 Configure: none
 Builder: qmake
